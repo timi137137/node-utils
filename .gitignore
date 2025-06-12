@@ -137,3 +137,6 @@ dist
 
 # IDE
 .idea
+
+# Vitest
+coverage/

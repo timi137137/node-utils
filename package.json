@@ -47,7 +47,7 @@
   },
   "packageManager": "pnpm@10.11.0",
   "engines": {
-    "node": "^22",
+    "node": "^20 || ^22",
     "pnpm": "^10.11.0"
   },
   "engineStrict": true

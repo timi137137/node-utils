@@ -1,4 +1,3 @@
-import typescript from '@rollup/plugin-typescript';
 import { glob } from 'glob';
 import { defineConfig } from 'rolldown';
 import { dts } from 'rollup-plugin-dts';
@@ -28,7 +27,6 @@ export default defineConfig([
       },
     ],
     plugins: [
-      typescript(),
       terser({
         format: { comments: false },
       }),

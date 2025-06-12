@@ -1,7 +1,7 @@
+import terser from '@rollup/plugin-terser';
 import { glob } from 'glob';
 import { defineConfig } from 'rolldown';
 import { dts } from 'rollup-plugin-dts';
-import { terser } from 'rollup-plugin-terser';
 
 const srcEntries = glob.sync('src/**/*.ts', {
   ignore: ['src/**/*.test.ts', 'src/**/*.spec.ts'],

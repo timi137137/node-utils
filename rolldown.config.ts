@@ -41,6 +41,10 @@ export default defineConfig([
         preserveModules: true,
       },
     ],
-    plugins: [dts()],
+    plugins: [
+      dts({
+        tsconfig: './tsconfig.json',
+      }),
+    ],
   },
 ]);

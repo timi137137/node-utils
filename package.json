@@ -1,12 +1,12 @@
 {
-  "name": "@timi137/node-utils",
+  "name": "@timi137/utils",
   "version": "1.0.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
-    "dist",
-    "LICENSE"
+    "**/*.mjs",
+    "**/*.d.mts"
   ],
   "sideEffects": [
     "dist/*"
@@ -20,7 +20,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "rolldown -c rolldown.config.ts",
+    "build": "tsdown",
     "prepublishOnly": "npm run build",
     "lint": "eslint --ext .js,.ts ./",
     "lint:fix": "eslint --ext .js,.ts ./ --fix",
@@ -30,24 +30,20 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.14.1",
-    "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^24.0.1",
     "@vitest/coverage-v8": "^3.2.3",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "glob": "^11.0.2",
-    "globals": "^16.2.0",
-    "rolldown": "1.0.0-beta.15",
-    "rolldown-plugin-dts": "^0.13.11",
+    "tsdown": "^0.12.7",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.34.0",
     "vitest": "^3.2.3"
   },
   "packageManager": "pnpm@10.11.0",
   "engines": {
-    "node": "^20 || ^22",
+    "node": "^22.16.0 || >=24.2.0",
     "pnpm": "^10.11.0"
   },
   "engineStrict": true

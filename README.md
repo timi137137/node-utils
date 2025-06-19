@@ -1,5 +1,3 @@
-## @timi137/node-utils
-
 ## Usage
 
 ### `./utils/snowflake` - 雪花算法

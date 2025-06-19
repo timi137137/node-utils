@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { Snowflake } from '../snowflake';
+import { Snowflake } from '@/snowflake';
 
 describe('snowflake', () => {
   const originalAtomics = globalThis.Atomics;

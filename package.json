@@ -17,6 +17,7 @@
     "url": "https://github.com/timi137137/node-utils"
   },
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {

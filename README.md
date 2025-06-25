@@ -56,3 +56,7 @@ console.log(parts);
 | 生成的 ID 重复                 | workerId/processId 冲突 | 确保每个节点使用唯一标识符 |
 
 ---
+
+# 鸣谢
+
+[bangbang93](https://github.com/bangbang93/) - 本项目灵感来源，基于其的实现逻辑进行了个性化修改。

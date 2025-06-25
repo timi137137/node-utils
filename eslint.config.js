@@ -44,6 +44,7 @@ export default antfu(
          */
         'no-console': 'off',
         'ts/no-explicit-any': 'off',
+        'ts/no-redeclare': 'off',
 
         /* Disallow person rules */
         'antfu/top-level-function': 'off',

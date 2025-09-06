@@ -3,7 +3,10 @@ import { defineConfig } from 'tsdown';
 export default defineConfig([
   {
     entry: ['src/**/*.ts'],
-    platform: 'neutral',
+    platform: 'node',
     dts: true,
+    exports: {
+      all: true,
+    },
   },
 ]);

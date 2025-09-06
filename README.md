@@ -1,5 +1,27 @@
 ## Usage
 
+---
+
+### `./` - 通用类型
+
+`PagedDto` - 分页请求定义，`page`,`limit`,`skip`是相关属性。
+
+`PagedResDto` - 分页响应类型。这玩意实际上是用来给 Swagger 看的。但他有两个签名。
+
+例子：
+```ts
+  @ApiOkResponse({ type: PagedResDto(ClassificationResDto) })
+  search() {}
+```
+
+#### Swagger 装饰器
+
+`@ApiSummary` - 为接口添加描述。
+
+`@ApiFile` - 参数是文件名，用来简化相关语法糖。
+
+---
+
 ### `./utils/snowflake` - 雪花算法
 
 通用部分示例：

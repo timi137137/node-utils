@@ -2,24 +2,21 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "sourceMap": true,
+    "declaration": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "lib": ["esnext"],
-    "noEmit": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     },
-    "noImplicitAny": true,
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
     "noImplicitThis": true,
-    "alwaysStrict": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "alwaysStrict": true
   },
   "include": [
     "**/*.ts",

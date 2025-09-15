@@ -25,7 +25,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     }
   }
 
-  catch(exception: Error, host: ArgumentsHost) {
+  catch(exception: Error, host: ArgumentsHost): unknown {
     const ctx = host.switchToHttp();
     const request = ctx.getRequest<FastifyRequest>();
     const response = ctx.getResponse<FastifyReply>();
@@ -39,20 +39,6 @@ export class HttpExceptionFilter implements ExceptionFilter {
         ...(typeof data === 'string' ? {} : data),
       });
       return this.catch(childError, host);
-    }
-
-    if (exception['code'] === 2 && exception['details']) {
-      try {
-        const json = JSON.parse(exception['details']);
-        if (json.$isServiceError) {
-          exception = plainToInstance(ServiceError, json as object);
-        } else {
-          exception = createError.UNKNOWN(json.message, { causedBy: exception });
-        }
-      } catch {
-        return this.catch(createError.UNKNOWN(exception['details'], { causedBy: exception }), host);
-      }
-      return this.catch(exception, host);
     }
 
     // if not ServiceError, transform to ServiceError
@@ -106,7 +92,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     } else if (err instanceof HttpException) {
       return err.getStatus();
     } else {
-      return err['httpCode'] ?? err['status'] ?? err['statusCode'] ?? HttpStatus.INTERNAL_SERVER_ERROR;
+      return HttpStatus.INTERNAL_SERVER_ERROR;
     }
   }
 }

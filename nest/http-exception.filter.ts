@@ -8,7 +8,7 @@ import type { FastifyReply, FastifyRequest } from 'fastify';
 import { omit, pick } from 'lodash';
 import { VError } from 'verror';
 
-import { transformJson } from '@/utils';
+import { transformJson } from '../';
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {

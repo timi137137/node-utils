@@ -2,7 +2,7 @@ import { applyDecorators } from '@nestjs/common';
 import { ApiBody, ApiConsumes, ApiOperation, ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsInt, IsOptional, Max, Min } from 'class-validator';
 
-import type { Constructor } from '@/utils';
+import type { Constructor } from '../';
 
 // ==================== Swagger 语法糖 ====================
 

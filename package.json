@@ -1,13 +1,8 @@
 {
   "name": "@timi137/utils",
-  "version": "1.3.0",
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
-  "files": [
-    "**/*.mjs",
-    "**/*.d.mts"
-  ],
+  "version": "1.4.0",
+  "main": "index.js",
+  "types": "index.d.ts",
   "sideEffects": [
     "dist/*"
   ],
@@ -21,7 +16,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "tsdown",
+    "build": "tsc -p tsconfig.build.json",
     "prepublishOnly": "npm run build",
     "lint": "eslint --ext .js,.ts ./",
     "lint:fix": "eslint --ext .js,.ts ./ --fix",
@@ -40,6 +35,7 @@
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.1.3",
     "@nestjs/swagger": "^11.2.0",
+    "@tsconfig/node22": "^22.0.2",
     "@types/json-stringify-safe": "^5.0.3",
     "@types/lodash": "^4.17.20",
     "@types/node": "^24.0.1",
@@ -50,7 +46,6 @@
     "eslint-plugin-prettier": "^5.4.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^16.2.0",
-    "tsdown": "^0.12.7",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.34.0",
     "vitest": "^3.2.3"
@@ -92,12 +87,5 @@
     "node": "^22.16.0 || >=24.2.0",
     "pnpm": "^10.11.0"
   },
-  "engineStrict": true,
-  "exports": {
-    ".": "./dist/index.mjs",
-    "./nest\\index": "./dist/nest\\index.mjs",
-    "./snowflake": "./dist/snowflake.mjs",
-    "./utils": "./dist/utils.mjs",
-    "./*": "./*"
-  }
+  "engineStrict": true
 }

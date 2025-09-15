@@ -1,3 +1,6 @@
+## 2025-09-15 - v2.0.0
+- Refactoring structure
+
 ## 2025-09-15 - v1.4.0
 - Remove unused dependencies
 - Remove `tsdown`

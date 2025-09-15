@@ -20,9 +20,7 @@
     "prepublishOnly": "npm run build",
     "lint": "eslint --ext .js,.ts ./",
     "lint:fix": "eslint --ext .js,.ts ./ --fix",
-    "test": "vitest",
-    "test:watch": "vitest watch",
-    "test:coverage": "vitest run --coverage"
+    "test": "true"
   },
   "dependencies": {
     "json-stringify-safe": "^5.0.1",

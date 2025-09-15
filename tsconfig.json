@@ -1,8 +1,8 @@
 {
+  "extends": "@tsconfig/node22",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "sourceMap": true,
     "declaration": true,
     "skipLibCheck": true,
@@ -12,16 +12,9 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    },
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true
+    }
   },
-  "include": [
-    "**/*.ts",
-    "src/**/*.d.ts",
-    "src/types/**/*.d.ts"
-  ],
-  "compileOnSave": false
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -1,3 +1,7 @@
+## 2025-09-15 - v1.4.0
+- Remove unused dependencies
+- Remove `tsdown`
+
 ## 2025-09-15 - v1.3.0
 - Add prefabricated HTTP Exception filter
 - Fix changelog time

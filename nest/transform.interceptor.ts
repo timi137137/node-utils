@@ -16,16 +16,16 @@ export class TransformInterceptor<T extends ResponseBody<unknown>>
 {
   private readonly logger = new Logger(TransformInterceptor.name);
   private readonly env: string | undefined;
-  private readonly log: boolean | undefined;
+  private readonly log: string | undefined;
 
   constructor(@Inject(ConfigService) configServiceOrEnv?: ConfigService | string) {
     if (configServiceOrEnv) {
       if (typeof configServiceOrEnv === 'string') {
         this.env = configServiceOrEnv;
-        this.log = false;
+        this.log = 'false';
       } else {
-        this.env = configServiceOrEnv.get<string>('NODE_ENV', 'development');
-        this.log = configServiceOrEnv.get<boolean>('CONSOLE_LOG', false);
+        this.env = configServiceOrEnv.get('NODE_ENV', 'development');
+        this.log = configServiceOrEnv.get('CONSOLE_LOG', 'false');
       }
     }
   }
@@ -35,7 +35,7 @@ export class TransformInterceptor<T extends ResponseBody<unknown>>
     const isProd = this.env?.toLowerCase() === 'production';
 
     // Writes request information to the log
-    if (Boolean(this.log)) {
+    if (this.log === 'true') {
       this.printRequest(request, !isProd);
     }
 
@@ -56,6 +56,7 @@ export class TransformInterceptor<T extends ResponseBody<unknown>>
   private printRequest(request: FastifyRequest, isVerbose: boolean) {
     const ip = getClientIp(request);
     const baseData = {
+      request_id: request.id,
       method: request.method,
       originalUrl: request.originalUrl,
       ip: ip || 'None IP',

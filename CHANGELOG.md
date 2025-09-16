@@ -1,4 +1,4 @@
-## 2025-09-16 - v2.2.1
+## 2025-09-16 - v2.2.2
 - Add Class Validator
 - Add Transform Interceptor
 

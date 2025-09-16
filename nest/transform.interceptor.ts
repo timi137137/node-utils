@@ -35,7 +35,7 @@ export class TransformInterceptor<T extends ResponseBody<unknown>>
     const isProd = this.env?.toLowerCase() === 'production';
 
     // Writes request information to the log
-    if (this.log) {
+    if (Boolean(this.log)) {
       this.printRequest(request, !isProd);
     }
 

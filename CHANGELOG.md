@@ -1,3 +1,7 @@
+## 2025-09-16 - v2.2.0
+- Add Class Validator
+- Add Transform Interceptor
+
 ## 2025-09-15 - v2.1.0
 - Refactoring structure
 

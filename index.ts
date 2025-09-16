@@ -4,6 +4,12 @@ export function transformJson(content: unknown | string, replacer?: (this: any, 
   return stringify(content, replacer, 4);
 }
 
+export interface ResponseBody<T> {
+  code: number;
+  message: string;
+  data: T;
+}
+
 export interface Constructor<T = unknown> {
   prototype: Prototype;
   new (...args: unknown[]): T;
